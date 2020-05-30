@@ -8,7 +8,10 @@ import java.util.function.Supplier;
 public class StudentDataBase {
 
     public static Supplier<Student> studentSupplier = () -> {
-        return  new Student("Adam",2,4.0,"male", Arrays.asList("swimming", "basketball","volleyball"));
+        Bike bike = new Bike("ABC","XYZ");
+        Student student =  new Student("Adam",2,4.0,"male", Arrays.asList("swimming", "basketball","volleyball"));
+        student.setBike(Optional.ofNullable(bike));
+        return student;
     };
 
     public static Optional<Student> getOptionalStudent(){
@@ -43,9 +46,7 @@ public class StudentDataBase {
         Student student5 = new Student("Sophia",4,3.5,"female",10, Arrays.asList("swimming", "dancing","football"));
         Student student6 = new Student("James",4,3.9,"male", 22,Arrays.asList("swimming", "basketball","baseball","football"));
 
-        Student student7 = new Student("James",4,3.9,"male", 22,Arrays.asList("swimming", "basketball","baseball","football"));
-
-        List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6,student7);
+        List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6,null);
         return students;
     }
 }

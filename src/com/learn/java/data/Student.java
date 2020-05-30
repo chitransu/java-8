@@ -11,7 +11,7 @@ public class Student {
     private double gpa;
     private String gender;
     private int noteBooks;
-    private Optional<Bike> bike;
+    private Optional<Bike> bike = Optional.empty();
 
     public Optional<Bike> getBike() {
         return bike;
@@ -109,6 +109,8 @@ public class Student {
                 ", gradeLevel=" + gradeLevel +
                 ", gpa=" + gpa +
                 ", gender='" + gender + '\'' +
+                ", noteBooks=" + noteBooks +
+                ", bike=" + bike +
                 ", activities=" + activities +
                 '}';
     }
